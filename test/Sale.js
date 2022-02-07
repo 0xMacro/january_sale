@@ -25,6 +25,7 @@ describe("JanuarySaleItem contract", function () {
   it("can be cheated", async function () {
     await cheatingBidder.cheat(januarySaleItem.address)
     expect(await januarySaleItem.isSold()).to.equal(true)
+    expect(await januarySaleItem.owner()).to.equal(cheatingBidder.address)
     expect(await januarySaleItem.soldFor()).to.equal(0)
   })
 })
