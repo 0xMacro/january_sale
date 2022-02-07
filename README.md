@@ -1,0 +1,11 @@
+# january_sale
+contracts for the January sale toy problem
+
+# to use
+
+1. `git clone https://github.com/Hacker-DAO/january_sale.git`
+2. `cd january_sale`
+3. `npm install`
+4. `npx hardhat test`
+
+The challenge is to get the test to pass by editing `contracts/CheatingBidder.sol` without making any changes to `contracts/JanuarySaleItem.sol` or `test/Sale.js`
