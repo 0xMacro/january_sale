@@ -1,7 +1,7 @@
 # january_sale
-contracts for the January sale toy problem
+Contracts for the January sale toy problem.
 
-# to use
+### To use:
 
 1. `git clone https://github.com/Hacker-DAO/january_sale.git`
 2. `cd january_sale`
