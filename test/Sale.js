@@ -16,9 +16,15 @@ describe("JanuarySaleItem contract", function () {
     await cheatingBidder.deployed()
   })
 
+  it("can be bought", async function () {
+    await cheatingBidder.cheat(januarySaleItem.address)
+    expect(await januarySaleItem.isSold()).to.equal(true)
+    expect(await januarySaleItem.owner()).to.equal(cheatingBidder.address)
+  })
+
   it("can be cheated", async function () {
     await cheatingBidder.cheat(januarySaleItem.address)
     expect(await januarySaleItem.isSold()).to.equal(true)
-    expect(await januarySaleItem.soldFor()).to.equal(ethers.utils.parseEther("0"))
+    expect(await januarySaleItem.soldFor()).to.equal(0)
   })
 })
