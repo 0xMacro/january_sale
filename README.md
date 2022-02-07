@@ -1,5 +1,5 @@
 # january_sale
-Contracts for the January sale toy problem.
+Contracts and test for the January sale toy problem.
 
 ### To use:
 
