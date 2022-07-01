@@ -3,3 +3,4 @@ artifacts/
 cache/
 contracts/answer
 package-lock.json
+.DS_Store

@@ -9,7 +9,7 @@ interface ISaleItem {
 
 contract CheatingBidder {
 
-    function cheat(address _saleItem) public {
+    function buyTheItem(address _saleItem) public {
     }
 
 }
