@@ -9,19 +9,22 @@ describe("JanuarySaleItem contract", function () {
     ;[owner] = await ethers.getSigners()
     januarySaleItem = await JanuarySaleItemFactory.deploy()
     await januarySaleItem.deployed()
+    FairBidderFactory = await ethers.getContractFactory("FairBidder")
+    fairBidder = await FairBidderFactory.deploy()
+    await fairBidder.deployed()
     CheatingBidderFactory = await ethers.getContractFactory("CheatingBidder")
     cheatingBidder = await CheatingBidderFactory.deploy()
     await cheatingBidder.deployed()
   })
 
-  it("can be bought", async function () {
-    await cheatingBidder.buyTheItem(januarySaleItem.address)
+  it("FairBidder can buy the item", async function () {
+    await fairBidder.buyTheItem(januarySaleItem.address)
     expect(await januarySaleItem.isSold()).to.equal(true)
     expect(await januarySaleItem.owner()).to.equal(cheatingBidder.address)
   })
 
-  it("can be bought for nothing", async function () {
-    await cheatingBidder.buyTheItem(januarySaleItem.address)
+  it("CheatingBidder can steal the item", async function () {
+    await cheatingBidder.stealTheItem(januarySaleItem.address)
     expect(await januarySaleItem.isSold()).to.equal(true)
     expect(await januarySaleItem.owner()).to.equal(cheatingBidder.address)
     expect(await januarySaleItem.soldFor()).to.equal(0)

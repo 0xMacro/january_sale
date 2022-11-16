@@ -7,9 +7,9 @@ interface ISaleItem {
     function buy() external;
 }
 
-contract CheatingBidder {
+contract FairBidder {
 
-    function stealTheItem(address _saleItem) public {
+    function buyTheItem(address _saleItem) public {
     }
 
 }
