@@ -20,7 +20,7 @@ describe("JanuarySaleItem contract", function () {
   it("FairBidder can buy the item", async function () {
     await fairBidder.buyTheItem(januarySaleItem.address)
     expect(await januarySaleItem.isSold()).to.equal(true)
-    expect(await januarySaleItem.owner()).to.equal(cheatingBidder.address)
+    expect(await januarySaleItem.owner()).to.equal(fairBidder.address)
   })
 
   it("CheatingBidder can steal the item", async function () {
