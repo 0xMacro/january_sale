@@ -12,4 +12,4 @@ The challenge is to get the test to pass by editing `contracts/FairBidder.sol` (
 
 The first test just checks that the FairBidder contract can buy the sale item, which is easily done by bidding the reserve price or higher.
 
-The second test requires the CheatingBidder to exploit a vulnerability in order to buy the sale item at a price of zero. 
+The second test requires the CheatingBidder to exploit a vulnerability to buy the sale item at a price of zero. 
