@@ -5,6 +5,7 @@ interface Bidder {
     function bidPrice() external view returns (uint);
 }
 
+// This is currently a copy of VulnerableJanuarySaleItem. Find the vulnerability and fix it here!
 contract SafeJanuarySaleItem {
     uint public reservePrice = 100;
     uint public soldFor;
